@@ -166,7 +166,6 @@
     NSString *imgName = faceDic[@"png"];
     NSString *faceName = faceDic[@"chs"];
     
-    NSLog(@"-----faceName:%@",faceName);
     NSDictionary *Diction = [NSDictionary dictionaryWithObjectsAndKeys:faceName,@"faceName", nil];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"faceName" object:self userInfo:Diction];
     

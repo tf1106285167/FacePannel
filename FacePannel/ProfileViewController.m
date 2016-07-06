@@ -26,6 +26,7 @@
     self.view.backgroundColor = [UIColor brownColor];
     
     textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 20, KScreenWidth, 130)];
+    textView.backgroundColor = [UIColor colorWithWhite:.9 alpha:1];
     [self.view addSubview:textView];
     
     
@@ -41,5 +42,9 @@
     textView.text = [NSString stringWithFormat:@"%@%@",textView.text,[info.userInfo objectForKey:@"faceName"]];
 }
 
+-(void)dealloc{
+    //移除通知
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
 
 @end
